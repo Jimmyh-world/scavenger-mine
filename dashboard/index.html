@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scavenger Mine - Browser Farm Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Scavenger Mine - Browser Farm Dashboard</h1>
+            <div class="status-bar">
+                <div class="status-item">
+                    <span class="label">Status:</span>
+                    <span id="status" class="status-value">Loading...</span>
+                </div>
+                <div class="status-item">
+                    <span class="label">Healthy Browsers:</span>
+                    <span id="healthy-count" class="status-value">0/20</span>
+                </div>
+                <div class="status-item">
+                    <span class="label">Last Update:</span>
+                    <span id="last-update" class="status-value">--:--:--</span>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <div class="grid-container">
+                <div class="browser-grid">
+                    <div class="browser-cell" data-browser="01">
+                        <iframe id="browser-01-frame" src="" title="Browser 01"></iframe>
+                        <div class="browser-info">
+                            <span class="browser-num">Browser 01</span>
+                            <span class="browser-status" id="status-01">●</span>
+                        </div>
+                    </div>
+                    <div class="browser-cell" data-browser="02">
+                        <iframe id="browser-02-frame" src="" title="Browser 02"></iframe>
+                        <div class="browser-info">
+                            <span class="browser-num">Browser 02</span>
+                            <span class="browser-status" id="status-02">●</span>
+                        </div>
+                    </div>
+                    <div class="browser-cell" data-browser="03">
+                        <iframe id="browser-03-frame" src="" title="Browser 03"></iframe>
+                        <div class="browser-info">
+                            <span class="browser-num">Browser 03</span>
+                            <span class="browser-status" id="status-03">●</span>
+                        </div>
+                    </div>
+                    <div class="browser-cell" data-browser="04">
+                        <iframe id="browser-04-frame" src="" title="Browser 04"></iframe>
+                        <div class="browser-info">
+                            <span class="browser-num">Browser 04</span>
+                            <span class="browser-status" id="status-04">●</span>
+                        </div>
+                    </div>
+                    <div class="browser-cell" data-browser="05">
+                        <iframe id="browser-05-frame" src="" title="Browser 05"></iframe>
+                        <div class="browser-info">
+                            <span class="browser-num">Browser 05</span>
+                            <span class="browser-status" id="status-05">●</span>
+                        </div>
+                    </div>
+
+                    <div class="browser-cell" data-browser="06">
+                        <iframe id="browser-06-frame" src="" title="Browser 06"></iframe>
+                        <div class="browser-info">
+                            <span class="browser-num">Browser 06</span>
+                            <span class="browser-status" id="status-06">●</span>
+                        </div>
+                    </div>
+                    <div class="browser-cell" data-browser="07">
+                        <iframe id="browser-07-frame" src="" title="Browser 07"></iframe>
+                        <div class="browser-info">
+                            <span class="browser-num">Browser 07</span>
+                            <span class="browser-status" id="status-07">●</span>
+                        </div>
+                    </div>
+                    <div class="browser-cell" data-browser="08">
+                        <iframe id="browser-08-frame" src="" title="Browser 08"></iframe>
+                        <div class="browser-info">
+                            <span class="browser-num">Browser 08</span>
+                            <span class="browser-status" id="status-08">●</span>
+                        </div>
+                    </div>
+                    <div class="browser-cell" data-browser="09">
+                        <iframe id="browser-09-frame" src="" title="Browser 09"></iframe>
+                        <div class="browser-info">
+                            <span class="browser-num">Browser 09</span>
+                            <span class="browser-status" id="status-09">●</span>
+                        </div>
+                    </div>
+                    <div class="browser-cell" data-browser="10">
+                        <iframe id="browser-10-frame" src="" title="Browser 10"></iframe>
+                        <div class="browser-info">
+                            <span class="browser-num">Browser 10</span>
+                            <span class="browser-status" id="status-10">●</span>
+                        </div>
+                    </div>
+
+                    <div class="browser-cell" data-browser="11">
+                        <iframe id="browser-11-frame" src="" title="Browser 11"></iframe>
+                        <div class="browser-info">
+                            <span class="browser-num">Browser 11</span>
+                            <span class="browser-status" id="status-11">●</span>
+                        </div>
+                    </div>
+                    <div class="browser-cell" data-browser="12">
+                        <iframe id="browser-12-frame" src="" title="Browser 12"></iframe>
+                        <div class="browser-info">
+                            <span class="browser-num">Browser 12</span>
+                            <span class="browser-status" id="status-12">●</span>
+                        </div>
+                    </div>
+                    <div class="browser-cell" data-browser="13">
+                        <iframe id="browser-13-frame" src="" title="Browser 13"></iframe>
+                        <div class="browser-info">
+                            <span class="browser-num">Browser 13</span>
+                            <span class="browser-status" id="status-13">●</span>
+                        </div>
+                    </div>
+                    <div class="browser-cell" data-browser="14">
+                        <iframe id="browser-14-frame" src="" title="Browser 14"></iframe>
+                        <div class="browser-info">
+                            <span class="browser-num">Browser 14</span>
+                            <span class="browser-status" id="status-14">●</span>
+                        </div>
+                    </div>
+                    <div class="browser-cell" data-browser="15">
+                        <iframe id="browser-15-frame" src="" title="Browser 15"></iframe>
+                        <div class="browser-info">
+                            <span class="browser-num">Browser 15</span>
+                            <span class="browser-status" id="status-15">●</span>
+                        </div>
+                    </div>
+
+                    <div class="browser-cell" data-browser="16">
+                        <iframe id="browser-16-frame" src="" title="Browser 16"></iframe>
+                        <div class="browser-info">
+                            <span class="browser-num">Browser 16</span>
+                            <span class="browser-status" id="status-16">●</span>
+                        </div>
+                    </div>
+                    <div class="browser-cell" data-browser="17">
+                        <iframe id="browser-17-frame" src="" title="Browser 17"></iframe>
+                        <div class="browser-info">
+                            <span class="browser-num">Browser 17</span>
+                            <span class="browser-status" id="status-17">●</span>
+                        </div>
+                    </div>
+                    <div class="browser-cell" data-browser="18">
+                        <iframe id="browser-18-frame" src="" title="Browser 18"></iframe>
+                        <div class="browser-info">
+                            <span class="browser-num">Browser 18</span>
+                            <span class="browser-status" id="status-18">●</span>
+                        </div>
+                    </div>
+                    <div class="browser-cell" data-browser="19">
+                        <iframe id="browser-19-frame" src="" title="Browser 19"></iframe>
+                        <div class="browser-info">
+                            <span class="browser-num">Browser 19</span>
+                            <span class="browser-status" id="status-19">●</span>
+                        </div>
+                    </div>
+                    <div class="browser-cell" data-browser="20">
+                        <iframe id="browser-20-frame" src="" title="Browser 20"></iframe>
+                        <div class="browser-info">
+                            <span class="browser-num">Browser 20</span>
+                            <span class="browser-status" id="status-20">●</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>Scavenger Mine Browser Farm | Midnight Network Mining | Last built: 2025-10-29</p>
+        </footer>
+    </div>
+
+    <script>
+        // Dashboard will be functional after deployment
+        // For now, show static grid view
+
+        function updateStatus() {
+            const now = new Date();
+            document.getElementById('last-update').textContent = now.toLocaleTimeString();
+        }
+
+        // Update status every 5 seconds
+        setInterval(updateStatus, 5000);
+        updateStatus();
+
+        // Show all browsers as gray (offline) initially
+        for (let i = 1; i <= 20; i++) {
+            const status = document.getElementById(`status-${String(i).padStart(2, '0')}`);
+            if (status) {
+                status.style.color = '#ccc';
+                status.textContent = '●';
+            }
+        }
+    </script>
+</body>
+</html>

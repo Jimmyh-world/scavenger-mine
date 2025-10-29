@@ -1,10 +1,11 @@
 # Scavenger Mine - Browser Farm for Midnight Network
 
-**Status**: In Development
+**Status**: ✅ Production Deployment Complete
 **Created**: 2025-10-29
+**Deployed**: 2025-10-29 12:50 UTC
 **Target**: Beast (192.168.68.100)
 
-Deploy 20 VNC-accessible browser instances for Midnight Network scavenger mining operations.
+20 VNC-accessible browser instances deployed for Midnight Network scavenger mining operations.
 
 ---
 
@@ -94,7 +95,8 @@ claude
 - **[AGENTS.md](./AGENTS.md)** - AI assistant guidelines, project context
 - **[CLAUDE.md](./CLAUDE.md)** - Quick reference for Claude Code
 - **[JIMMYS-WORKFLOW.md](./JIMMYS-WORKFLOW.md)** - Complete workflow system
-- **[docs/BEAST-DEPLOYMENT-SPEC.md](./docs/BEAST-DEPLOYMENT-SPEC.md)** - Haiku 4.5 optimized deployment plan
+- **[docs/BEAST-DEPLOYMENT-SPEC.md](./docs/BEAST-DEPLOYMENT-SPEC.md)** - Deployment plan and validation procedures
+- **[docs/OPERATIONS.md](./docs/OPERATIONS.md)** - Day-to-day operations guide for running the browser farm
 
 ---
 
@@ -137,21 +139,24 @@ claude
 - AGENTS.md created
 - Deployment spec created (Haiku 4.5 optimized)
 
-**Phase 2: Infrastructure Setup** - ⚪ Pending
-- Port discovery script
-- Docker Compose configuration
-- Grid dashboard
-- Browser containers
+**Phase 2: Infrastructure Setup** - ✅ Complete (2025-10-29 12:50 UTC)
+- Port discovery script created (scripts/check-ports.sh)
+- Docker Compose configuration (21 services)
+- Grid dashboard with 4x5 layout
+- 20 browser containers deployed
 
-**Phase 3: Deployment & Validation** - ⚪ Pending
-- Deploy to Beast
-- Validate all instances
-- Resource usage check
+**Phase 3: Deployment & Validation** - ✅ Complete (2025-10-29 12:50 UTC)
+- All 21 containers deployed to Beast
+- Port allocation: 7000-7020
+- Resource usage: ~3.6 GiB RAM (3.9% of 96 GiB)
+- All browsers accessible and healthy
+- Dashboard functional
 
-**Phase 4: Operations** - ⚪ Pending
-- Management scripts
-- Documentation
-- Monitoring integration
+**Phase 4: Operations** - ✅ Complete (2025-10-29 12:50 UTC)
+- Management scripts (start.sh, stop.sh, status.sh, restart-browser.sh, open-browser.sh)
+- OPERATIONS.md documentation
+- README.md updated
+- Deployment ready for production mining operations
 
 ---
 

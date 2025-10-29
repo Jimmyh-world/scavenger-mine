@@ -1,0 +1,529 @@
+version: '3.8'
+
+services:
+  # Dashboard service - Grid control panel
+  dashboard:
+    build: ./dashboard
+    container_name: scavenger-mine-dashboard
+    ports:
+      - "${DASHBOARD_PORT}:8080"
+    environment:
+      - FLASK_ENV=production
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 20s
+    networks:
+      - scavenger-network
+    depends_on:
+      - browser-01
+
+  # Browser instances - 20 total
+  browser-01:
+    image: selenium/standalone-chrome:latest
+    container_name: scavenger-mine-browser-01
+    ports:
+      - "${BROWSER_01_PORT}:7900"
+    volumes:
+      - browser-01-data:/home/seluser/.config
+      - /dev/shm:/dev/shm
+    environment:
+      - SE_NODE_MAX_SESSIONS=1
+      - SE_NODE_SESSION_TIMEOUT=300
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:7900/wd/hub/status"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 30s
+    networks:
+      - scavenger-network
+    shm_size: 2gb
+    mem_limit: 1g
+    cpus: 1.0
+
+  browser-02:
+    image: selenium/standalone-chrome:latest
+    container_name: scavenger-mine-browser-02
+    ports:
+      - "${BROWSER_02_PORT}:7900"
+    volumes:
+      - browser-02-data:/home/seluser/.config
+      - /dev/shm:/dev/shm
+    environment:
+      - SE_NODE_MAX_SESSIONS=1
+      - SE_NODE_SESSION_TIMEOUT=300
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:7900/wd/hub/status"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 30s
+    networks:
+      - scavenger-network
+    shm_size: 2gb
+    mem_limit: 1g
+    cpus: 1.0
+
+  browser-03:
+    image: selenium/standalone-chrome:latest
+    container_name: scavenger-mine-browser-03
+    ports:
+      - "${BROWSER_03_PORT}:7900"
+    volumes:
+      - browser-03-data:/home/seluser/.config
+      - /dev/shm:/dev/shm
+    environment:
+      - SE_NODE_MAX_SESSIONS=1
+      - SE_NODE_SESSION_TIMEOUT=300
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:7900/wd/hub/status"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 30s
+    networks:
+      - scavenger-network
+    shm_size: 2gb
+    mem_limit: 1g
+    cpus: 1.0
+
+  browser-04:
+    image: selenium/standalone-chrome:latest
+    container_name: scavenger-mine-browser-04
+    ports:
+      - "${BROWSER_04_PORT}:7900"
+    volumes:
+      - browser-04-data:/home/seluser/.config
+      - /dev/shm:/dev/shm
+    environment:
+      - SE_NODE_MAX_SESSIONS=1
+      - SE_NODE_SESSION_TIMEOUT=300
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:7900/wd/hub/status"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 30s
+    networks:
+      - scavenger-network
+    shm_size: 2gb
+    mem_limit: 1g
+    cpus: 1.0
+
+  browser-05:
+    image: selenium/standalone-chrome:latest
+    container_name: scavenger-mine-browser-05
+    ports:
+      - "${BROWSER_05_PORT}:7900"
+    volumes:
+      - browser-05-data:/home/seluser/.config
+      - /dev/shm:/dev/shm
+    environment:
+      - SE_NODE_MAX_SESSIONS=1
+      - SE_NODE_SESSION_TIMEOUT=300
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:7900/wd/hub/status"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 30s
+    networks:
+      - scavenger-network
+    shm_size: 2gb
+    mem_limit: 1g
+    cpus: 1.0
+
+  browser-06:
+    image: selenium/standalone-chrome:latest
+    container_name: scavenger-mine-browser-06
+    ports:
+      - "${BROWSER_06_PORT}:7900"
+    volumes:
+      - browser-06-data:/home/seluser/.config
+      - /dev/shm:/dev/shm
+    environment:
+      - SE_NODE_MAX_SESSIONS=1
+      - SE_NODE_SESSION_TIMEOUT=300
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:7900/wd/hub/status"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 30s
+    networks:
+      - scavenger-network
+    shm_size: 2gb
+    mem_limit: 1g
+    cpus: 1.0
+
+  browser-07:
+    image: selenium/standalone-chrome:latest
+    container_name: scavenger-mine-browser-07
+    ports:
+      - "${BROWSER_07_PORT}:7900"
+    volumes:
+      - browser-07-data:/home/seluser/.config
+      - /dev/shm:/dev/shm
+    environment:
+      - SE_NODE_MAX_SESSIONS=1
+      - SE_NODE_SESSION_TIMEOUT=300
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:7900/wd/hub/status"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 30s
+    networks:
+      - scavenger-network
+    shm_size: 2gb
+    mem_limit: 1g
+    cpus: 1.0
+
+  browser-08:
+    image: selenium/standalone-chrome:latest
+    container_name: scavenger-mine-browser-08
+    ports:
+      - "${BROWSER_08_PORT}:7900"
+    volumes:
+      - browser-08-data:/home/seluser/.config
+      - /dev/shm:/dev/shm
+    environment:
+      - SE_NODE_MAX_SESSIONS=1
+      - SE_NODE_SESSION_TIMEOUT=300
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:7900/wd/hub/status"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 30s
+    networks:
+      - scavenger-network
+    shm_size: 2gb
+    mem_limit: 1g
+    cpus: 1.0
+
+  browser-09:
+    image: selenium/standalone-chrome:latest
+    container_name: scavenger-mine-browser-09
+    ports:
+      - "${BROWSER_09_PORT}:7900"
+    volumes:
+      - browser-09-data:/home/seluser/.config
+      - /dev/shm:/dev/shm
+    environment:
+      - SE_NODE_MAX_SESSIONS=1
+      - SE_NODE_SESSION_TIMEOUT=300
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:7900/wd/hub/status"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 30s
+    networks:
+      - scavenger-network
+    shm_size: 2gb
+    mem_limit: 1g
+    cpus: 1.0
+
+  browser-10:
+    image: selenium/standalone-chrome:latest
+    container_name: scavenger-mine-browser-10
+    ports:
+      - "${BROWSER_10_PORT}:7900"
+    volumes:
+      - browser-10-data:/home/seluser/.config
+      - /dev/shm:/dev/shm
+    environment:
+      - SE_NODE_MAX_SESSIONS=1
+      - SE_NODE_SESSION_TIMEOUT=300
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:7900/wd/hub/status"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 30s
+    networks:
+      - scavenger-network
+    shm_size: 2gb
+    mem_limit: 1g
+    cpus: 1.0
+
+  browser-11:
+    image: selenium/standalone-chrome:latest
+    container_name: scavenger-mine-browser-11
+    ports:
+      - "${BROWSER_11_PORT}:7900"
+    volumes:
+      - browser-11-data:/home/seluser/.config
+      - /dev/shm:/dev/shm
+    environment:
+      - SE_NODE_MAX_SESSIONS=1
+      - SE_NODE_SESSION_TIMEOUT=300
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:7900/wd/hub/status"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 30s
+    networks:
+      - scavenger-network
+    shm_size: 2gb
+    mem_limit: 1g
+    cpus: 1.0
+
+  browser-12:
+    image: selenium/standalone-chrome:latest
+    container_name: scavenger-mine-browser-12
+    ports:
+      - "${BROWSER_12_PORT}:7900"
+    volumes:
+      - browser-12-data:/home/seluser/.config
+      - /dev/shm:/dev/shm
+    environment:
+      - SE_NODE_MAX_SESSIONS=1
+      - SE_NODE_SESSION_TIMEOUT=300
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:7900/wd/hub/status"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 30s
+    networks:
+      - scavenger-network
+    shm_size: 2gb
+    mem_limit: 1g
+    cpus: 1.0
+
+  browser-13:
+    image: selenium/standalone-chrome:latest
+    container_name: scavenger-mine-browser-13
+    ports:
+      - "${BROWSER_13_PORT}:7900"
+    volumes:
+      - browser-13-data:/home/seluser/.config
+      - /dev/shm:/dev/shm
+    environment:
+      - SE_NODE_MAX_SESSIONS=1
+      - SE_NODE_SESSION_TIMEOUT=300
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:7900/wd/hub/status"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 30s
+    networks:
+      - scavenger-network
+    shm_size: 2gb
+    mem_limit: 1g
+    cpus: 1.0
+
+  browser-14:
+    image: selenium/standalone-chrome:latest
+    container_name: scavenger-mine-browser-14
+    ports:
+      - "${BROWSER_14_PORT}:7900"
+    volumes:
+      - browser-14-data:/home/seluser/.config
+      - /dev/shm:/dev/shm
+    environment:
+      - SE_NODE_MAX_SESSIONS=1
+      - SE_NODE_SESSION_TIMEOUT=300
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:7900/wd/hub/status"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 30s
+    networks:
+      - scavenger-network
+    shm_size: 2gb
+    mem_limit: 1g
+    cpus: 1.0
+
+  browser-15:
+    image: selenium/standalone-chrome:latest
+    container_name: scavenger-mine-browser-15
+    ports:
+      - "${BROWSER_15_PORT}:7900"
+    volumes:
+      - browser-15-data:/home/seluser/.config
+      - /dev/shm:/dev/shm
+    environment:
+      - SE_NODE_MAX_SESSIONS=1
+      - SE_NODE_SESSION_TIMEOUT=300
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:7900/wd/hub/status"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 30s
+    networks:
+      - scavenger-network
+    shm_size: 2gb
+    mem_limit: 1g
+    cpus: 1.0
+
+  browser-16:
+    image: selenium/standalone-chrome:latest
+    container_name: scavenger-mine-browser-16
+    ports:
+      - "${BROWSER_16_PORT}:7900"
+    volumes:
+      - browser-16-data:/home/seluser/.config
+      - /dev/shm:/dev/shm
+    environment:
+      - SE_NODE_MAX_SESSIONS=1
+      - SE_NODE_SESSION_TIMEOUT=300
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:7900/wd/hub/status"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 30s
+    networks:
+      - scavenger-network
+    shm_size: 2gb
+    mem_limit: 1g
+    cpus: 1.0
+
+  browser-17:
+    image: selenium/standalone-chrome:latest
+    container_name: scavenger-mine-browser-17
+    ports:
+      - "${BROWSER_17_PORT}:7900"
+    volumes:
+      - browser-17-data:/home/seluser/.config
+      - /dev/shm:/dev/shm
+    environment:
+      - SE_NODE_MAX_SESSIONS=1
+      - SE_NODE_SESSION_TIMEOUT=300
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:7900/wd/hub/status"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 30s
+    networks:
+      - scavenger-network
+    shm_size: 2gb
+    mem_limit: 1g
+    cpus: 1.0
+
+  browser-18:
+    image: selenium/standalone-chrome:latest
+    container_name: scavenger-mine-browser-18
+    ports:
+      - "${BROWSER_18_PORT}:7900"
+    volumes:
+      - browser-18-data:/home/seluser/.config
+      - /dev/shm:/dev/shm
+    environment:
+      - SE_NODE_MAX_SESSIONS=1
+      - SE_NODE_SESSION_TIMEOUT=300
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:7900/wd/hub/status"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 30s
+    networks:
+      - scavenger-network
+    shm_size: 2gb
+    mem_limit: 1g
+    cpus: 1.0
+
+  browser-19:
+    image: selenium/standalone-chrome:latest
+    container_name: scavenger-mine-browser-19
+    ports:
+      - "${BROWSER_19_PORT}:7900"
+    volumes:
+      - browser-19-data:/home/seluser/.config
+      - /dev/shm:/dev/shm
+    environment:
+      - SE_NODE_MAX_SESSIONS=1
+      - SE_NODE_SESSION_TIMEOUT=300
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:7900/wd/hub/status"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 30s
+    networks:
+      - scavenger-network
+    shm_size: 2gb
+    mem_limit: 1g
+    cpus: 1.0
+
+  browser-20:
+    image: selenium/standalone-chrome:latest
+    container_name: scavenger-mine-browser-20
+    ports:
+      - "${BROWSER_20_PORT}:7900"
+    volumes:
+      - browser-20-data:/home/seluser/.config
+      - /dev/shm:/dev/shm
+    environment:
+      - SE_NODE_MAX_SESSIONS=1
+      - SE_NODE_SESSION_TIMEOUT=300
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:7900/wd/hub/status"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 30s
+    networks:
+      - scavenger-network
+    shm_size: 2gb
+    mem_limit: 1g
+    cpus: 1.0
+
+volumes:
+  browser-01-data:
+  browser-02-data:
+  browser-03-data:
+  browser-04-data:
+  browser-05-data:
+  browser-06-data:
+  browser-07-data:
+  browser-08-data:
+  browser-09-data:
+  browser-10-data:
+  browser-11-data:
+  browser-12-data:
+  browser-13-data:
+  browser-14-data:
+  browser-15-data:
+  browser-16-data:
+  browser-17-data:
+  browser-18-data:
+  browser-19-data:
+  browser-20-data:
+
+networks:
+  scavenger-network:
+    driver: bridge
